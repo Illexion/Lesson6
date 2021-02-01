@@ -1,22 +1,22 @@
-
 public  class Dog extends Animal {
-    int maxDist = 500;
+
+    int maxDistRun = 500;
+    int maxDistSwim = 10;
+
     public Dog(String name, String color, int age) {
         super(name, color, age);
     }
 
-    public void info() {
-        System.out.println(name + " пес");
-        super.info();
+    @Override
+    public void run(int distance) {
+        super.setMaxDistRun(maxDistRun);
+        super.run(distance);
     }
 
-
-    public void run(int distance) {
-        if(distance <= maxDist){
-            System.out.println("Ruuuuuun!" + distance);
-        } else {
-            System.out.println("Собаки столько не могут пробежать!");
-        }
+    @Override
+    public void swimming(int distance) {
+        super.setMaxDistSwim(maxDistSwim);
+        super.swimming(distance);
     }
 
 
